@@ -22,5 +22,5 @@
 hs_err_pid*
 
 # inteliJ
-.idea
-out
+/.idea/
+/out/
