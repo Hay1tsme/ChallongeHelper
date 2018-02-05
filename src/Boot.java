@@ -1,5 +1,4 @@
 import java.awt.*;
-import java.awt.event.KeyEvent;
 import javax.swing.*;
 
 public class Boot implements Runnable {
@@ -20,7 +19,7 @@ public class Boot implements Runnable {
 
         //Create a text field, Action, and Button
         keyField = new JTextField("",30);
-        Action logAct = new logAction("Log In", new ImageIcon(), "Log in with your Challonge API key", KeyEvent.VK_ENTER);
+        Action logAct = new logAction("Log In", "Log in with your Challonge API key", 10, 30);
         logButton = new JButton(logAct);
         label1 = new JLabel("API Key: ");
 
@@ -45,9 +44,12 @@ public class Boot implements Runnable {
     public static void onKeyWorks() {
         logButton.setVisible(false);
         keyField.setVisible(false);
-        label1.setText("API Key: " + logAction.key);
-        JButton btnCreate = new JButton();
-        JButton btnEdit = new JButton();
+        label1.setText("API Key: " + values.key);
+
+        Action edtAct = new editAction("Edit", "Edit an already existing tournament", 10, 30);
+        Action btnCreAct = new createBtnAction("Create", "Create a tournament", 10, 30);
+        JButton btnCreate = new JButton(btnCreAct);
+        JButton btnEdit = new JButton(edtAct);
 
         f.getContentPane().add(btnCreate);
         f.getContentPane().add(btnEdit);
