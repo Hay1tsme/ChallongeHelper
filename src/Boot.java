@@ -14,7 +14,7 @@ public class Boot implements Runnable {
         // Sets the behavior for when the window is closed
         f.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         //Set min window size
-        f.setSize(400,500);
+        f.setSize(400,120);
         // Add a layout manager so that the button is not placed on top of the label
         f.setLayout(new FlowLayout());
 
@@ -46,6 +46,11 @@ public class Boot implements Runnable {
         logButton.setVisible(false);
         keyField.setVisible(false);
         label1.setText("API Key: " + logAction.key);
+        JButton btnCreate = new JButton();
+        JButton btnEdit = new JButton();
+
+        f.getContentPane().add(btnCreate);
+        f.getContentPane().add(btnEdit);
     }
 
 
